@@ -1,0 +1,1 @@
+I've created this repository to keep all the coding exercises that hopefully will help me to understand better the different types of sockets and the functionality they provide.
