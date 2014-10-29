@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+		<title>Pacman multiplayer</title>
+
+</head>
+<body>
+			<h1>Pacman multiplayer</h1>
+			<ul id='points'>
+
+			</ul>
+
+		
+	<script src="/socket.io/socket.io.js"></script>
+	
+		<script type="text/javascript">
+				var socket = io()
+				socket.emit('keydown', function() { console.log("down") })
+				socket.on('points', function(points) {
+					console.log(points)
+				})
+				
+				document.addEventListener('keydown', function(event) {
+				    if(event.keyCode == 37) {
+				        socket.emit('keydown', function() { return "down" })
+				    }
+				    else if(event.keyCode == 39) {
+				        socket.emit('keydown', function() { console.log("down") })
+				    }
+				});
+
+				</script>
+</body>
